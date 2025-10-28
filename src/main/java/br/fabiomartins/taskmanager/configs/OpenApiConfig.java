@@ -23,7 +23,7 @@ public class OpenApiConfig {
                         .contact(new Contact()
                                 .name("Fábio Filho")
                                 .email("fabio.filho0820@gmail.com")
-                                .url("https://github.com/fabiomartins"))
+                                .url("https://github.com/fabiomp-filho"))
                         .license(new License()
                                 .name("MIT License")
                                 .url("https://opensource.org/licenses/MIT"))
