@@ -1,4 +1,4 @@
-package br.fabiomartins.taskmanager.exceptions;
+package br.fabiomartins.taskmanager.common.exceptions;
 
 public class BusinessException extends RuntimeException {
     public BusinessException(String message) {

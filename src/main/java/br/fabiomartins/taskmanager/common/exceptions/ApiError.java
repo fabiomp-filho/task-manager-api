@@ -1,4 +1,4 @@
-package br.fabiomartins.taskmanager.exceptions;
+package br.fabiomartins.taskmanager.common.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

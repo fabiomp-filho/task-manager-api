@@ -1,12 +1,16 @@
 spring:
   application:
     name: task-manager
-
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
 server:
   port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: "/task-manager"
+app:
+  issuer: http://localhost:8080
+  token-ttl-minutes: 60
 
 logging:
   level:

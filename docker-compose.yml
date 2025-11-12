@@ -6,9 +6,9 @@ services:
     container_name: postgres-taskmanager
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: task_manager_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: task_manager_db
     ports:
       - "5432:5432"
     volumes:
@@ -24,8 +24,8 @@ services:
       - postgres
     environment:
       SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
-      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
-      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
       SERVER_PORT: ${SPRING_PORT}
       SPRING_PROFILES_ACTIVE: docker
       SPRING_JPA_HIBERNATE_DDL_AUTO: update

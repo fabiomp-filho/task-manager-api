@@ -1,4 +1,4 @@
-package br.fabiomartins.taskmanager.exceptions;
+package br.fabiomartins.taskmanager.common.exceptions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

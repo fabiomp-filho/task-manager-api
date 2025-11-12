@@ -1,4 +1,4 @@
-package br.fabiomartins.taskmanager.exceptions;
+package br.fabiomartins.taskmanager.common.exceptions;
 
 public class NotFoundException extends RuntimeException{
     public NotFoundException(String message) {
