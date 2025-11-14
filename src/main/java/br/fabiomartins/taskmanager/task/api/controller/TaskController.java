@@ -3,12 +3,15 @@ package br.fabiomartins.taskmanager.task.api.controller;
 import br.fabiomartins.taskmanager.task.api.dto.TaskRequestDTO;
 import br.fabiomartins.taskmanager.task.api.dto.TaskResponseDTO;
 import br.fabiomartins.taskmanager.task.domain.model.Task;
+import br.fabiomartins.taskmanager.task.domain.port.TaskService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.UUID;
 
@@ -45,5 +48,24 @@ public class TaskController {
     public ResponseEntity<String> delete(@PathVariable UUID id) {
         taskService.delete(id);
         return ResponseEntity.ok("Task deleted sucessfully");
+    }
+
+    private Task toDomain(TaskRequestDTO dto, UUID boardId) {
+        return Task.builder()
+                .title(dto.getTitle())
+                .description(dto.getDescription())
+                .done(Boolean.TRUE.equals(dto.getDone()))
+                .boardId(boardId)
+                .build();
+    }
+
+    private TaskResponseDTO toResponse(Task task) {
+        return new TaskResponseDTO(
+                task.getId(),
+                task.getTitle(),
+                task.getDescription(),
+                task.isDone(),
+                LocalDateTime.ofInstant(task.getCreatedAt(), ZoneOffset.UTC)
+        );
     }
 }

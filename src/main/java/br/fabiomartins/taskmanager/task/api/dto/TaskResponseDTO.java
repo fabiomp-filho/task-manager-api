@@ -13,7 +13,7 @@ public class TaskResponseDTO {
     private UUID id;
     private String title;
     private String description;
-    private Boolean isCompleted;
+    private Boolean done;
 
     @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss")
     private LocalDateTime createdAt;

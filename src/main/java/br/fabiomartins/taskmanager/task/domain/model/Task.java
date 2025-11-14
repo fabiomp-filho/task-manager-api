@@ -9,7 +9,11 @@ import lombok.*;
 import java.time.Instant;
 import java.util.UUID;
 
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Task {
     private UUID id;
     private String title;
@@ -17,4 +21,10 @@ public class Task {
     private boolean done;
     private Instant dueDate;
     private UUID boardId;
+
+    private Long version;
+    private Instant createdAt;
+    private Instant updatedAt;
+    private UUID createdBy;
+    private UUID updatedBy;
 }
